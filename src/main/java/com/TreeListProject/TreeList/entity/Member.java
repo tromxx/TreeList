@@ -1,5 +1,6 @@
 package com.TreeListProject.TreeList.entity;
 
+import com.TreeListProject.TreeList.constant.UserRole;
 import lombok.*;
 import org.springframework.lang.Nullable;
 
@@ -28,11 +29,15 @@ public class Member {
     @Nullable
     private String password;
 
+    @Enumerated(EnumType.STRING)
+    private UserRole userRole;
+
     @Builder
-    public Member(Long id, String email, String name, String password) {
+    public Member(Long id, String email, String name, String password, UserRole userRole) {
         this.id = id;
         this.email = email;
         this.name = name;
         this.password = password;
+        this.userRole = userRole;
     }
 }
