@@ -1,7 +1,6 @@
 package com.TreeListProject.TreeList.dto;
 
 import com.TreeListProject.TreeList.entity.ToDoList;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
