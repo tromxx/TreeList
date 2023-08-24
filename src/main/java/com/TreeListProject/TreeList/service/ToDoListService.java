@@ -5,6 +5,8 @@ import com.TreeListProject.TreeList.dto.ToDoListResponseDto;
 import com.TreeListProject.TreeList.entity.ToDoList;
 import com.TreeListProject.TreeList.reposiotry.ToDoListRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Slice;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -18,8 +20,8 @@ public class ToDoListService {
    private final ToDoListRepository toDoListRepository;
    
    @Transactional
-   public List<ToDoListResponseDto> readToDoList() {
-      List<ToDoList> toDoListList = toDoListRepository.findByToDoListIsCompleteFalse();
+   public List<ToDoListResponseDto> readToDoList(int page) {
+      Slice<ToDoList> toDoListList = toDoListRepository.findByToDoListIsCompleteFalse(PageRequest.of(page,10));
       List<ToDoListResponseDto> responseDtoList = new ArrayList<>();
       
       for (ToDoList toDoList : toDoListList) {
@@ -29,11 +31,12 @@ public class ToDoListService {
       return responseDtoList;
    }
    
+   // ToDoList 생성 할때 무한스크롤 데이터 다시 확인 했을때 초기화 될 문재 생김 frontend 처리시 좋은건가?
    @Transactional
-   public List<ToDoListResponseDto> createToDoList(ToDoListRequestDto toDoListRequestDto) {
+   public List<ToDoListResponseDto> createToDoList(ToDoListRequestDto toDoListRequestDto, int page) {
       ToDoList toDoList = toDoListRequestDto.toDoListToEntity();
       toDoListRepository.save(toDoList);
-      return readToDoList();
+      return readToDoList(page);
    }
    
    @Transactional

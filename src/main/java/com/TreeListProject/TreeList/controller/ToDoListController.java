@@ -18,13 +18,13 @@ public class ToDoListController {
    private final ToDoListService toDoListService;
    
    @GetMapping("")
-   public ResponseEntity<List<ToDoListResponseDto>> readToDoList() {
-      return new ResponseEntity<>(toDoListService.readToDoList(), HttpStatus.OK);
+   public ResponseEntity<List<ToDoListResponseDto>> readToDoList(@RequestParam int page) {
+      return new ResponseEntity<>(toDoListService.readToDoList(page), HttpStatus.OK);
    }
    
    @PostMapping("")
    public ResponseEntity<List<ToDoListResponseDto>> createToDoList(@RequestBody ToDoListRequestDto toDoListRequestDto) {
-      return new ResponseEntity<>(toDoListService.createToDoList(toDoListRequestDto), HttpStatus.OK);
+      return new ResponseEntity<>(toDoListService.createToDoList(toDoListRequestDto, 0), HttpStatus.OK);
    }
    
    @PostMapping("/dummy")
