@@ -23,7 +23,7 @@
   	<img src="https://img.shields.io/badge/Visual%20Studio%20Code-007ACC?style=flat&logo=VisualStudioCode&logoColor=white" />
 </div>
 
-## 목차
+## :leaves:목차
 
 - [프로젝트 소개](#----------)
 - [프로젝트 주요 기능](#-------------)
@@ -32,3 +32,40 @@
 - [개발 기간](#-stars-------)
 - [개발 환경](#-stars-------)
 - [빌드](#-stars----)
+
+## :leaves:프로젝트 소개
+개인이 자신의 업무, 활동 및 책임을 조직화하고 관리하는 데 도움 또는 친구들이나 회사 업무와 같은 그룹 활동의 관리에도 활용.
+
+## :leaves:프로젝트 주요 기능 
+- 확인중.
+- 확인중.
+- 확인중.
+- 확인중.
+
+## :leaves: ERD
+- 확인중
+
+## :leaves: 팀원
+- 1
+- 2
+- 3
+- 4
+
+## :leaves: 개발 기간 
+- 기획 :
+- 개발 :
+
+## :leaves: 개발 환경
+- OS : Window 10
+- IDE : VS Code, IntelliJ
+- Language : Java, Javascript
+- FrontEnd : HTML/CSS
+- Library : ReactJS
+- DB : JDBC, Oracle
+- Server : Tomcat
+
+
+
+
+
+
