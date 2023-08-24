@@ -61,7 +61,7 @@
 - Language : Java, Javascript
 - FrontEnd : HTML/CSS
 - Library : ReactJS
-- DB : JDBC, Oracle
+- DB : MySql
 - Server : Tomcat
 
 
