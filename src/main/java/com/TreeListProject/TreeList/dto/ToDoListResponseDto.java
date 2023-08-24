@@ -12,19 +12,19 @@ import java.time.LocalDateTime;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class ToDoListResponseDto {
    
-   private Long ToDoListId;
+   private Long id;
    
-   private String ToDoListTitle;
+   private String title;
    
-   private String ToDoListContent;
+   private String content;
    
-   private LocalDateTime ToDoListDeadLine;
+   private LocalDateTime deadLine;
    
    @Builder
    public ToDoListResponseDto(ToDoList toDoList) {
-      this.ToDoListId = toDoList.getToDoListId();
-      this.ToDoListTitle = toDoList.getToDoListTitle();
-      this.ToDoListContent = toDoList.getToDoListContent();
-      this.ToDoListDeadLine = toDoList.getToDoListDeadline();
+      this.id = toDoList.getToDoListId();
+      this.title = toDoList.getToDoListTitle();
+      this.content = toDoList.getToDoListContent();
+      this.deadLine = toDoList.getToDoListDeadline();
    }
 }
