@@ -7,6 +7,7 @@ import org.springframework.lang.Nullable;
 import javax.persistence.*;
 
 @Entity
+@Builder
 @Getter @ToString
 @NoArgsConstructor(force = true)
 @Table(name = "Member")
@@ -16,6 +17,10 @@ public class Member {
     @Column(name = "Member_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "Member_loginId")
+    @Nullable
+    private String loginId;
 
     @Column(name = "Member_Email")
     @Nullable
@@ -32,12 +37,19 @@ public class Member {
     @Enumerated(EnumType.STRING)
     private UserRole userRole;
 
-    @Builder
-    public Member(Long id, String email, String name, String password, UserRole userRole) {
+    // OAuth 로그인에 사용
+    private String provider;
+    private String providerId;
+
+    public Member(Long id,String loginId, String email, String name, String password,
+                  UserRole userRole, String provider, String providerId) {
         this.id = id;
+        this.loginId = loginId;
         this.email = email;
         this.name = name;
         this.password = password;
         this.userRole = userRole;
+        this.provider = provider;
+        this.providerId = providerId;
     }
 }
