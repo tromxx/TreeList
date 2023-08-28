@@ -1,6 +1,6 @@
 package com.TreeListProject.TreeList.config;
 
-import com.TreeListProject.TreeList.constant.UserRole;
+
 import com.TreeListProject.TreeList.entity.Member;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
