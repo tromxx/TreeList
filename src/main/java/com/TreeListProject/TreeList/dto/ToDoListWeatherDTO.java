@@ -1,7 +1,7 @@
 package com.TreeListProject.TreeList.dto;
 
 public class ToDoListWeatherDTO {
-    private Long id;
+    private Long id; // primary key
     private String region; // 지역
     private Double temp; // 온도
     private Double rainAmount; // 강수량
